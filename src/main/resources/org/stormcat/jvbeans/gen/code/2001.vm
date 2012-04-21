@@ -1,0 +1,119 @@
+/*
+ * Copyright 2009-${year} the Stormcat Project.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+package ${packageName};
+ 
+/**
+ * ${javadoc}
+ * @author jv-beans-gen
+ * @since 0.1
+ *
+ */
+public enum ${className} implements org.stormcat.jvbeans.common.constants.PairValueEnum<${type}> {
+
+#foreach( ${code} in ${codeList} )
+    /** ${code.name} */
+    ${code.key}("${code.name}", "${code.value}", "${code.nameChar1}", "${code.nameChar2}", "${code.nameChar3}", "${code.nameEng}", ${code.nameEngChar3}),
+    
+#end
+    ;
+
+    /** 場名 */
+    private String name;
+    
+    /** 値 */
+    private ${type} value;
+    
+    /** 場略名(1文字) */
+    private String nameChar1;
+    
+    /** 場略名(2文字) */
+    private String nameChar2;
+    
+    /** 場略名(3文字) */
+    private String nameChar3;
+    
+    /** 場欧字名 */
+    private String nameEng;
+    
+    /** 場欧字略名(3文字) */
+    private String nameEngChar3;
+
+    private ${className}(String name, ${type} value, String nameChar1, String nameChar2,
+        String nameChar3, String nameEng, String nameEngChar3) {
+        this.name = name;
+        this.value = value;
+        this.nameChar1 = nameChar1;
+        this.nameChar2 = nameChar2;
+        this.nameChar3 = nameChar3;
+        this.nameEng = nameEng;
+        this.nameEngChar3 = nameEngChar3;
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    public String getName() {
+        return this.name;
+    }    
+
+    /**
+     * {@inheritDoc}
+     */
+    public ${type} getValue() {
+        return this.value;
+    }
+    
+    /**
+     * 場略名(1文字)を返します。
+     * @return 場略名(1文字)
+     */
+    public String getCourseNameChar1() {
+        return this.nameChar1;
+    }
+
+    /**
+     * 場略名(2文字)を返します。
+     * @return 場略名(2文字)
+     */    
+    public String getCourseNameChar2() {
+        return this.nameChar2;
+    }
+    
+    /**
+     * 場略名(3文字)を返します。
+     * @return 場略名(3文字)
+     */
+    public String getCourseNameChar3() {
+        return this.nameChar3;
+    }
+    
+    /**
+     * 場欧字名を返します。
+     * @return 場欧字名
+     */
+    public String getCourseNameEng() {
+        return this.nameEng;
+    }
+
+    /**
+     * 場欧字略名(3文字)を返します。
+     * @return 場欧字略名(3文字)
+     */    
+    public String getCourseNameEngChar3() {
+        return this.nameEngChar3;
+    }
+    
+}

@@ -1,0 +1,107 @@
+/*
+ * Copyright 2009-${year} the Stormcat Project.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+package ${packageName};
+ 
+/**
+ * ${javadoc}
+ * @author jv-beans-gen
+ * @since 0.1
+ *
+ */
+public enum ${className} implements org.stormcat.jvbeans.common.constants.PairValueEnum<${type}> {
+
+#foreach( ${code} in ${codeList} )
+    /** ${code.name} */
+    ${code.key}("${code.name}", "${code.value}", "${code.nameChar4}", "${code.nameChar6}", "${code.nameChar8}", "${code.nameEng}"),
+    
+#end
+    ;
+
+    /** 名称 */
+    private String name;
+    
+    /** 値 */
+    private ${type} value;
+    
+    /** 略名(4文字) */
+    private String nameChar4;
+    
+    /** 略名(6文字) */
+    private String nameChar6;
+    
+    /** 略名(8文字) */
+    private String nameChar8;
+    
+    /** 欧字名 */
+    private String nameEng;
+    
+    private ${className}(String name, ${type} value, String nameChar4, String nameChar6,
+        String nameChar8, String nameEng) {
+        this.name = name;
+        this.value = value;
+        this.nameChar4 = nameChar4;
+        this.nameChar6 = nameChar6;
+        this.nameChar8 = nameChar8;
+        this.nameEng = nameEng;
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    public String getName() {
+        return this.name;
+    }    
+
+    /**
+     * {@inheritDoc}
+     */
+    public ${type} getValue() {
+        return this.value;
+    }
+    
+    /**
+     * 略名(4文字)を返します。
+     * @return 略名(4文字)
+     */
+    public String getCourseNameChar4() {
+        return this.nameChar4;
+    }
+
+    /**
+     * 略名(6文字)を返します。
+     * @return 略名(6文字)
+     */    
+    public String getCourseNameChar6() {
+        return this.nameChar6;
+    }
+    
+    /**
+     * 略名(8文字)を返します。
+     * @return 略名(8文字)
+     */
+    public String getCourseNameChar8() {
+        return this.nameChar8;
+    }
+    
+    /**
+     * 欧字名を返します。
+     * @return 欧字名
+     */
+    public String getCourseNameEng() {
+        return this.nameEng;
+    }
+
+}

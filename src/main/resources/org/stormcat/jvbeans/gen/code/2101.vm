@@ -1,0 +1,94 @@
+/*
+ * Copyright 2009-${year} the Stormcat Project.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+package ${packageName};
+ 
+/**
+ * ${javadoc}
+ * @author jv-beans-gen
+ * @since 0.1
+ *
+ */
+public enum ${className} implements org.stormcat.jvbeans.common.constants.PairValueEnum<${type}> {
+
+#foreach( ${code} in ${codeList} )
+    /** ${code.name} */
+    ${code.key}("${code.name}", ${code.value}, "${code.nameChar2}", "${code.nameEng}", "${code.nameEngShort}"),
+    
+#end
+    ;
+
+    /** 名称 */
+    private String name;
+    
+    /** 値 */
+    private ${type} value;
+    
+    /** 略名(2文字) */
+    private String nameChar2;
+    
+    /** 欧字名 */
+    private String nameEng;
+    
+    /** 欧字略名 */
+    private String nameEngShort;
+    
+    private ${className}(String name, ${type} value, String nameChar2, String nameEng, String nameEngShort) {
+        this.name = name;
+        this.value = value;
+        this.nameChar2 = nameChar2;
+        this.nameEng = nameEng;
+        this.nameEngShort = nameEngShort;
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    public String getName() {
+        return this.name;
+    }    
+
+    /**
+     * {@inheritDoc}
+     */
+    public ${type} getValue() {
+        return this.value;
+    }
+    
+    /**
+     * 略名(2文字)  を返します。
+     * @return 略名(2文字)  
+     */
+    public String getNameChar2() {
+        return this.nameChar2;
+    }
+    
+    /**
+     * 欧字名 を返します。
+     * @return 欧字名 
+     */
+    public String getNameEng() {
+        return this.nameEng;
+    }
+    
+    /**
+     * 欧字略名 を返します。
+     * @return 欧字略名 
+     */
+    public String getNameEngShort() {
+        return this.nameEngShort;
+    }    
+    
+}

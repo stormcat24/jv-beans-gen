@@ -1,0 +1,52 @@
+/*
+ * Copyright 2009-${year} the Stormcat Project.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+package ${packageName};
+
+/**
+ * データ種別 ${dataType} のEnumによる表現です。
+ * @author jv-beans-gen
+ * @since 0.1
+ *
+ */
+public enum ${className} implements ${dataSpecType} {
+
+    INSTANCE;
+
+#foreach( ${recordType} in ${recordTypeList} )
+    /**
+     * レコード種別ID {@code ${recordType.recordTypeId}}に対応するデータ取得条件を返します。
+     * @return データ取得条件
+     */
+    public ${openCondition}<${recordType.dtoType}> _${recordType.recordTypeId}() {
+        return new ${openCondition}<${recordType.dtoType}>(this, org.stormcat.jvbeans.jvlink.definitions.ConcreteRecordTypeId.${recordType.recordTypeId}, ${recordType.dtoType}.class);
+    }
+
+#end
+    /**
+     * {@inheritDoc}
+     */
+    public String getName() {
+        return "${dataName}";
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public String getValue() {
+        return "${dataType}";
+    }
+
+}

@@ -1,0 +1,157 @@
+/*
+ * Copyright 2009-${year} the Stormcat Project.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+package ${packageName};
+
+ /**
+#if( ${parent} )
+ * レコードフォーマットID {@link ${recordTypeId}} に対応するDtoです。
+#end
+ * @author jv-beans-gen
+ * @since 0.1
+ *
+ */
+#if( ${parent} )
+@org.stormcat.jvbeans.annotation.JvBean(recordTypeId = "${recordTypeId}", byteLength = ${byteLength})
+public class ${className} extends org.stormcat.jvbeans.jvlink.JvBindingDto {
+
+    /**
+     * {@code ${recordTypeId}}に対応したデータ区分を表現するEnumです。
+     * @author jv-beans-gen
+     * @since 0.3
+     *
+     */
+    public enum ${dataDivEnumName} implements org.stormcat.jvbeans.config.DataDiv {
+
+#foreach( ${dataDiv} in ${dataDivItems} )
+        _${dataDiv.key}("${dataDiv.value}", "${dataDiv.key}"),
+
+#end
+        ;
+
+        /** 名称 */
+        private String name;
+
+        /** 値 */
+        private String value;
+
+        /**
+         * コンストラクタ
+         * @param name 名称
+         * @param value 値
+         */
+        private ${dataDivEnumName}(String name, String value) {
+            this.name = name;
+            this.value = value;
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        public String getValue() {
+            return value;
+        }
+
+    }
+#else
+public class ${className} {
+#end
+
+#foreach( ${property} in ${propertyList} )
+    /** ${property.itemName} */
+#if( ${property.repeat} )
+#if( ${property.join} )
+    @org.stormcat.jvbeans.annotation.JvProperty(position = ${property.position}, byteLength = ${property.byteLength}, repeatCount = ${property.repeatCount}, join = true)
+#else
+#if( ${property.correction})
+    @org.stormcat.jvbeans.annotation.JvProperty(position = ${property.position}, byteLength = ${property.byteLength}, repeatCount = ${property.repeatCount}, correction = ${property.correction}f)
+#else
+    @org.stormcat.jvbeans.annotation.JvProperty(position = ${property.position}, byteLength = ${property.byteLength}, repeatCount = ${property.repeatCount})
+#end
+#end
+    private java.util.List<${property.type}> ${property.name};
+#else
+#if( ${property.correction})
+    @org.stormcat.jvbeans.annotation.JvProperty(position = ${property.position}, byteLength = ${property.byteLength}, correction = ${property.correction}f)
+#else
+    @org.stormcat.jvbeans.annotation.JvProperty(position = ${property.position}, byteLength = ${property.byteLength})
+#end
+    private ${property.type} ${property.name};
+#end
+
+#end
+
+#foreach( ${property} in ${propertyList} )
+#if( ${property.repeat} )
+    /**
+     * ${property.itemName}を返します。
+     * @return ${property.itemName}
+     */
+    public java.util.List<${property.type}> ${property.getterName}() {
+        return ${property.name};
+    }
+
+    /**
+     * ${property.itemName}を設定します。
+     * @param ${property.name} ${property.itemName}
+     */
+    public void ${property.setterName}(java.util.List<${property.type}> ${property.name}) {
+        this.${property.name} = ${property.name};
+    }
+#else
+#if( ${property.name} == "dataDiv")
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public org.stormcat.jvbeans.config.DataDiv getDataDiv() {
+        return ${dataDivEnumName}.valueOf(java.lang.String.format("_%s", dataDiv));
+    }
+
+    /**
+     * データ区分を設定します。
+     * @param データ区分
+     */
+    public void setDataDiv(java.lang.String dataDiv) {
+        this.dataDiv = dataDiv;
+    }
+#else
+    /**
+     * ${property.itemName}を返します。
+     * @return ${property.itemName}
+     */
+    public ${property.type} ${property.getterName}() {
+        return ${property.name};
+    }
+
+    /**
+     * ${property.itemName}を設定します。
+     * @param ${property.name} ${property.itemName}
+     */
+    public void ${property.setterName}(${property.type} ${property.name}) {
+        this.${property.name} = ${property.name};
+    }
+#end
+#end
+
+#end
+}
