@@ -115,6 +115,9 @@ public class FormatSheet {
     @MappedRecordTypeId("DM")
     private List<FormatRow> dataMiningYosoItems;
     
+    @MappedRecordTypeId("WF")
+    private List<FormatRow> winFiveItems;
+    
     @MappedRecordTypeId("WH")
     private List<FormatRow> bataizyuItems;
     
@@ -549,10 +552,43 @@ public class FormatSheet {
     /**
      * @param dataMiningYosoItems セットする dataMiningYosoItems
      */
-    @HorizontalRecords(tableLabel = "１０１．データマイニング予想", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "２８．タイム型データマイニング予想", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setDataMiningYosoItems(List<FormatRow> dataMiningYosoItems) {
         this.dataMiningYosoItems = dataMiningYosoItems;
     }
+    
+  
+    // TODO
+//    /**
+//     * @return dataMiningYosoMatchupItems
+//     */
+//    public List<FormatRow> getDataMiningYosoMatchupItems() {
+//        return dataMiningYosoMatchupItems;
+//    }
+//
+//    /**
+//     * @param dataMiningYosoMatchupItems セットする dataMiningYosoMatchupItems
+//     */
+//    @HorizontalRecords(tableLabel = "２９．対戦型データマイニング予想", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+//    public void setDataMiningYosoMatchupItems(List<FormatRow> dataMiningYosoMatchupItems) {
+//        this.dataMiningYosoMatchupItems = dataMiningYosoMatchupItems;
+//    }
+    
+
+	/**
+	 * @return winFiveItems
+	 */
+	public List<FormatRow> getWinFiveItems() {
+		return winFiveItems;
+	}
+
+	/**
+	 * @param winFiveItems セットする winFiveItems
+	 */
+	@HorizontalRecords(tableLabel = "３０．重勝式(WIN5)", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+	public void setWinFiveItems(List<FormatRow> winFiveItems) {
+		this.winFiveItems = winFiveItems;
+	}
 
     /**
      * @return bataizyuItems
@@ -560,11 +596,13 @@ public class FormatSheet {
     public List<FormatRow> getBataizyuItems() {
         return bataizyuItems;
     }
+    
+    // TODO 除外
 
     /**
      * @param bataizyuItems セットする bataizyuItems
      */
-    @HorizontalRecords(tableLabel = "１０２．馬体重", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "１０１．馬体重", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setBataizyuItems(List<FormatRow> bataizyuItems) {
         this.bataizyuItems = bataizyuItems;
     }
@@ -579,7 +617,7 @@ public class FormatSheet {
     /**
      * @param tenkoBabazyotaiItems セットする tenkoBabazyotaiItems
      */
-    @HorizontalRecords(tableLabel = "１０３．天候馬場状態", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "１０２．天候馬場状態", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setTenkoBabazyotaiItems(List<FormatRow> tenkoBabazyotaiItems) {
         this.tenkoBabazyotaiItems = tenkoBabazyotaiItems;
     }
@@ -594,7 +632,7 @@ public class FormatSheet {
     /**
      * @param syussotorikeshiKyosozyogaiItems セットする syussotorikeshiKyosozyogaiItems
      */
-    @HorizontalRecords(tableLabel = "１０４．出走取消・競走除外", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "１０３．出走取消・競走除外", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setSyussotorikeshiKyosozyogaiItems(List<FormatRow> syussotorikeshiKyosozyogaiItems) {
         this.syussotorikeshiKyosozyogaiItems = syussotorikeshiKyosozyogaiItems;
     }
@@ -609,7 +647,7 @@ public class FormatSheet {
     /**
      * @param kisyuHenkoItems セットする kisyuHenkoItems
      */
-    @HorizontalRecords(tableLabel = "１０５．騎手変更", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "１０４．騎手変更", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setKisyuHenkoItems(List<FormatRow> kisyuHenkoItems) {
         this.kisyuHenkoItems = kisyuHenkoItems;
     }
@@ -624,7 +662,7 @@ public class FormatSheet {
     /**
      * @param hassoJikokuHenkoItems セットする hassoJikokuHenkoItems
      */
-    @HorizontalRecords(tableLabel = "１０６．発走時刻変更", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "１０５．発走時刻変更", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setHassoJikokuHenkoItems(List<FormatRow> hassoJikokuHenkoItems) {
         this.hassoJikokuHenkoItems = hassoJikokuHenkoItems;
     }
@@ -639,9 +677,10 @@ public class FormatSheet {
     /**
      * @param courseHenkoItems セットする courseHenkoItems
      */
-    @HorizontalRecords(tableLabel = "１０７．コース変更", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    @HorizontalRecords(tableLabel = "１０６．コース変更", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
     public void setCourseHenkoItems(List<FormatRow> courseHenkoItems) {
         this.courseHenkoItems = courseHenkoItems;
     }
+
     
 }
