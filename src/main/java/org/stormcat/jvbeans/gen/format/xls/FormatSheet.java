@@ -115,8 +115,14 @@ public class FormatSheet {
     @MappedRecordTypeId("DM")
     private List<FormatRow> dataMiningYosoItems;
     
+    @MappedRecordTypeId("TM")
+    private List<FormatRow> dataMiningYosoMatchupItems;
+    
     @MappedRecordTypeId("WF")
     private List<FormatRow> winFiveItems;
+    
+    @MappedRecordTypeId("JG")
+    private List<FormatRow> horseExclusionItems;
     
     @MappedRecordTypeId("WH")
     private List<FormatRow> bataizyuItems;
@@ -558,21 +564,20 @@ public class FormatSheet {
     }
     
   
-    // TODO
-//    /**
-//     * @return dataMiningYosoMatchupItems
-//     */
-//    public List<FormatRow> getDataMiningYosoMatchupItems() {
-//        return dataMiningYosoMatchupItems;
-//    }
-//
-//    /**
-//     * @param dataMiningYosoMatchupItems セットする dataMiningYosoMatchupItems
-//     */
-//    @HorizontalRecords(tableLabel = "２９．対戦型データマイニング予想", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
-//    public void setDataMiningYosoMatchupItems(List<FormatRow> dataMiningYosoMatchupItems) {
-//        this.dataMiningYosoMatchupItems = dataMiningYosoMatchupItems;
-//    }
+    /**
+     * @return dataMiningYosoMatchupItems
+     */
+    public List<FormatRow> getDataMiningYosoMatchupItems() {
+        return dataMiningYosoMatchupItems;
+    }
+
+    /**
+     * @param dataMiningYosoMatchupItems セットする dataMiningYosoMatchupItems
+     */
+    @HorizontalRecords(tableLabel = "２９．対戦型データマイニング予想", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+    public void setDataMiningYosoMatchupItems(List<FormatRow> dataMiningYosoMatchupItems) {
+        this.dataMiningYosoMatchupItems = dataMiningYosoMatchupItems;
+    }
     
 
 	/**
@@ -590,15 +595,28 @@ public class FormatSheet {
 		this.winFiveItems = winFiveItems;
 	}
 
+	/**
+	 * @return horseExclusionItems
+	 */
+	public List<FormatRow> getHorseExclusionItems() {
+		return horseExclusionItems;
+	}
+
+	/**
+	 * @param horseExclusionItems セットする
+	 */
+	@HorizontalRecords(tableLabel = "３１．競走馬除外情報", recordClass = FormatRow.class, terminal = RecordTerminal.Border)
+	public void setHorseExclusionItems(List<FormatRow> horseExclusionItems) {
+		this.horseExclusionItems = horseExclusionItems;
+	}
+    
     /**
      * @return bataizyuItems
      */
     public List<FormatRow> getBataizyuItems() {
         return bataizyuItems;
-    }
-    
-    // TODO 除外
-
+    }	
+	
     /**
      * @param bataizyuItems セットする bataizyuItems
      */
