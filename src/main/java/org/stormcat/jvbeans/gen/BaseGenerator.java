@@ -62,8 +62,10 @@ public abstract class BaseGenerator {
             dir.mkdirs();
         }
         
-        File source = new File(String.format("%s/%s.java", sourceDir, getClassName()));
+        String filePath = String.format("%s/%s.java", sourceDir, getClassName());
+        File source = new File(filePath);
         FileUtil.writeStringToFile(source, container.toString(), Charset.UTF8);
+        logger.info(String.format("wrote %s", filePath));
     }
     
     protected String getSourceDir(String packageName) {
