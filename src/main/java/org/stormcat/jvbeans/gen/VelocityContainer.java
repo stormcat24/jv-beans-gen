@@ -24,7 +24,7 @@ import org.apache.velocity.app.Velocity;
 import org.apache.velocity.exception.MethodInvocationException;
 import org.apache.velocity.exception.ParseErrorException;
 import org.apache.velocity.exception.ResourceNotFoundException;
-import org.stormcat.commons.constants.Charset;
+import org.stormcat.jvbeans.common.constants.Charset;
 
 /**
  * @author a.yamada
@@ -41,7 +41,7 @@ public class VelocityContainer {
      * @param templatePath
      * @param charset
      */
-    public VelocityContainer(String templatePath, Charset charset) {
+	public VelocityContainer(String templatePath, Charset charset) {
         try {
             Velocity.init();
             context = new VelocityContext();

@@ -20,9 +20,9 @@ import java.util.Calendar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.stormcat.commons.constants.Charset;
-import org.stormcat.commons.io.FileUtil;
-import org.stormcat.commons.io.PropertyUtil;
+import org.stormcat.jvbeans.common.constants.Charset;
+import org.stormcat.jvbeans.common.io.FileUtil;
+import org.stormcat.jvbeans.common.io.PropertyUtil;
 import org.stormcat.jvbeans.config.RecordTypeId;
 
 /**

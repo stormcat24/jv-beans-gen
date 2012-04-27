@@ -18,8 +18,7 @@ package org.stormcat.jvbeans.gen.code;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.stormcat.commons.lang.StringUtil;
-
+import org.stormcat.jvbeans.common.lang.StringUtil;
 import org.stormcat.jvbeans.gen.code.xls.Code2102;
 import org.stormcat.jvbeans.gen.code.xls.CodeSheet;
 import org.stormcat.jvbeans.gen.util.JvBeansGenUtil;

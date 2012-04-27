@@ -20,7 +20,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.stormcat.commons.lang.StringUtil;
+import org.stormcat.jvbeans.common.lang.StringUtil;
 import org.stormcat.jvbeans.gen.BaseGenerator;
 import org.stormcat.jvbeans.gen.VelocityContainer;
 import org.stormcat.jvbeans.gen.datatype.xls.DataTypeRow;

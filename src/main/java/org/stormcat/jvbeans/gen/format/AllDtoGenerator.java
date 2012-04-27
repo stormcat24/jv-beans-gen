@@ -19,8 +19,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
-import org.stormcat.commons.reflect.FieldUtil;
-import org.stormcat.commons.reflect.MethodUtil;
+import org.stormcat.jvbeans.common.reflect.FieldUtil;
+import org.stormcat.jvbeans.common.reflect.MethodUtil;
 import org.stormcat.jvbeans.gen.annotation.MappedRecordTypeId;
 import org.stormcat.jvbeans.gen.format.xls.FormatSheet;
 import org.stormcat.jvbeans.gen.util.JvBeansGenUtil;

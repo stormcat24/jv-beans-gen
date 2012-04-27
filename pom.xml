@@ -68,8 +68,9 @@
 		<repository>
 			<id>jv-beans.sourceforge.jp</id>
 			<name>JV-Beans Maven Repository</name>
-			<url>http://jv-beans.sourceforge.jp/maven2/</url>
+			<url>http://maven.stormcat.me/repository/</url>
 		</repository>
+		<!-- 
 		<repository>
 			<snapshots>
 				<enabled>true</enabled>
@@ -79,7 +80,9 @@
 			<name>JV-Beans Maven Snapshot Repository</name>
 			<url>http://jv-beans.sourceforge.jp/maven2-snapshot/</url>
 		</repository>
+		 -->
 	</repositories>
+	<!-- 
 	<distributionManagement>
 		<repository>
 			<uniqueVersion>false</uniqueVersion>
@@ -98,11 +101,12 @@
 			<url>scp://shell.sourceforge.jp/home/groups/j/jv/jv-beans/htdocs/site/</url>
 		</site>
 	</distributionManagement>
+	 -->
 	<dependencies>
 		<dependency>
 			<groupId>org.stormcat</groupId>
 			<artifactId>jv-beans</artifactId>
-			<version>0.3.1</version>
+			<version>1.1.0-RC1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.velocity</groupId>

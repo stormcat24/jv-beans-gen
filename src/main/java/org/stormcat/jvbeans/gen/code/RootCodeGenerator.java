@@ -19,8 +19,8 @@ import java.lang.reflect.Method;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.stormcat.commons.reflect.ClassUtil;
-import org.stormcat.commons.reflect.MethodUtil;
+import org.stormcat.jvbeans.common.reflect.ClassUtil;
+import org.stormcat.jvbeans.common.reflect.MethodUtil;
 import org.stormcat.jvbeans.gen.util.JvBeansGenUtil;
 
 /**
